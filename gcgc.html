@@ -11,8 +11,6 @@
 
 
 </head>
-
-
 <body>
     <nav>
         <div class="logo-name">
@@ -83,36 +81,78 @@
             <!--<img src="images/profile.jpg" alt="">-->
         </div>
     
-        <main>
+        <main class="caixa">
             <div class="main_container">
-            <div class="container">
-                <div id="gc">
-                <h2>Grocery List</h2>
-                <h3>Add Item</h3>
-                <p>
-                    <input id="new-task" type="text"><button>Add</button>
-                </p>
-    
-                <h3>Shopping Cart</h3>
-                <ul id="incomplete-tasks">
-    
-                </ul>
-    
-                <h3>Already Bought</h3>
-                <ul id="completed-tasks">
-    
-                </ul>
-            </div>
-            </div>
+                <div id="container">
+                    <div class="correcao">
+                    <button id="printButton" onclick="printDocument('print')">Print your bill</button>
+                    <div id = "print">
+                    <table class="dynamic-row" align="center">
+                      <thead>
+                        <tr>
+                          <td style="color: white;">
+                            Product Name
+                          </td>
+                          <td style="color: white;">
+                            Unit
+                          </td>
+                          <td style="color: white;">
+                            Unit Price
+                          </td>
+                          <td style="color: white;">
+                            Total
+                          </td>
+                          <td style="color: white;">
+                            Edit/Delete
+                          </td>
+                        </tr>
+                      </thead>
+                    </table>
+                    <div id="invoice" style="color: white;">
+                      <table align="center" class="dynamic-row">
+                        <tbody id="dynamic-row">
+                        </tbody>
+                      </table>
+                    </div>
+                    <table class="dynamic-row" align="center">
+                      <tr id="grand-total">
+                        <td style="color: white;">
+                          <h5>Grand Total :</h5>
+                        </td>
+                        <td style="color: white;" id="grand-total-1">0</td>
+                      </tr>
+                    </table>
+                    </div>
+                    <br />
+                    <div class="input-area">
+                      <input
+                        type="text"
+                        class="input-boxes"
+                        id="product-name"
+                        placeholder="Product Name"
+                        required
+                      />
+                      <input
+                        type="number"
+                        class="input-boxes"
+                        id="unit-price"
+                        placeholder="Unit Price"
+                        required
+                      />
+                      <input
+                        type="number"
+                        class="input-boxes"
+                        id="unit"
+                        placeholder="Unit"
+                        required
+                      />
+                      <button id="add" onclick="addItem()">Add</button>
+                    </div>
+                    </div>
+                  </div>    
             </div>
             
     </main>
-
-
-
-
-
-
 
     <script src="gcgc.js"></script>
 </body>

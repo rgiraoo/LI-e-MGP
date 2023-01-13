@@ -466,161 +466,95 @@ nav.close ~ .dashboard .top{
 
 
 
-/* Basic Style */
-
-
-.container {
-    color: black;
-    display: block;
-    width: 600px;
-    margin: 10px auto 100px;
-    background-color: white;
-    padding:0px 10px 10px 10px;
-    border-radius:10px;
-  }
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+#invoice {
+    height: 55%;
+    overflow-y: scroll;
+}
+.input-area {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.dynamic-row {
+    border-collapse: collapse;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
   
-  h2 {
-    text-align:center;
-    padding-top:10px;
-    margin-bottom:0px;
-  }
-  
-  ul {
+}
+.dynamic-row tr td {   
+    padding: 0; 
     margin: 0;
-    padding: 0;
-  }
-  
-  li,
-  h3 {
-    clear: both;
-    list-style: none;
-  }
-  
-  input,
-  button {
-    outline: none;
-  }
-  
-  button {
-    background: none;
-    border: 0px;
-    color: #888;
-    font-size: 15px;
-    width: 60px;
-    margin: 10px 0 0;
-    font-family: Lato, sans-serif;
+    height: 60px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid #88888854;
+}
+.input-boxes {
+    margin: 1%;
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid rgb(126, 126, 128);
+}
+
+button {
+    width: 20%;
+    height: 35px;
+    margin: 1.5%;
+    border: 0 none;
     cursor: pointer;
-  }
-  
-  button:hover {
-    color: #333;
-  }
-  
-  
-  /* Heading */
-  
-  h3,
-  label[for='new-task'] {
-    color: #333;
-    font-weight: 700;
-    font-size: 15px;
-    border-bottom: 2px solid #333;
-    padding: 20px 0 10px;
-    margin: 0;
-    text-transform: uppercase;
-  }
-  
-  input[type="text"] {
-    margin: 0;
-    font-size: 18px;
-    line-height: 18px;
-    height: 18px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 6px;
-    font-family: Lato, sans-serif;
-    color: #888;
-  }
-  
-  input[type="text"]:focus {
-    color: #333;
-  }
-  
-  
-  /* New Task */
-  
-  label[for='new-task'] {
-    display: block;
-    margin: 0 0 20px;
-  }
-  
-  input#new-task {
-    float: left;
-    width: 318px;
-  }
-  
-  p > button:hover {
-    color: #ffc21a;
-  }
-  
-  
-  /* Task list */
-  
-  li {
-    overflow: hidden;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .fodase {
-    border-bottom: 1px solid #eee;
-  }
-  
-  li > input[type="checkbox"] {
-    margin: 0 10px;
-    position: relative;
-    top: 15px;
-  }
-  
-  li > label {
-    font-size: 18px;
-    line-height: 40px;
-    width: 237px;
-    padding: 0 0 0 11px;
-  }
-  
-  li > input[type="text"] {
-    width: 226px;
-  }
-  
-  li > .delete:hover {
-    color: #CF2323;
-  }
-  
-  
-  /* Completed */
-  
-  #completed-tasks label {
-    text-decoration: line-through;
-    color: rgb(0, 148, 74);
-  }
-  
-  
-  /* Edit Task */
-  
-  ul li input[type=text] {
-    display: none;
-  }
-  
-  ul li.editMode input[type=text] {
-    display: block;
-  }
-  
-  ul li.editMode label {
-    display: none;
-  }
-  
-  .a {
-    border-bottom: 0;
-  }
+    background-color: orange;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border-radius: 10px;
+}
+#save:hover {
+    color: rgb(253, 251, 251);
+    background-color: rgb(3, 172, 3);
+}
+#del:hover {
+    color: rgb(253, 251, 251);
+    background-color: rgb(250, 3, 3);
+}
+#edit:hover {
+    color: rgb(253, 251, 251);
+    background-color: rgb(82, 150, 214);
+}
+#add:hover {
+    color: rgb(253, 251, 251);
+    background-color: red;
+}
+
+#del, #edit, #save {
+    width: 100%;
+}
+.input-boxes-on-edit {
+    margin: .5%;
+    text-align: center;
+    font-size: 14px;
+    height: 20px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid rgb(126, 126, 128);
+}
+
+.correcao {
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+.caixa {
+    box-sizing: border-box;
+}
