@@ -27,7 +27,7 @@ if(isset($_POST['register'])){
             // Start a session
             $_SESSION['email'] = $email;
             // Redirect user to protected page
-            header("Location: profile.php");
+            header("Location: register.html");
         } else {
             echo "Error: " . mysqli_error($conn);
         }
