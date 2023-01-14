@@ -21,16 +21,15 @@
     --box3-color: rgb(10, 173, 10);
     --title-icon-color: rgb(0, 0, 0);
     
-     /* ====== Transition ====== */
-     --tran-05: all 0.5s ease;
-     --tran-03: all 0.3s ease;
-     --tran-03: all 0.2s ease;
-
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
 }
 
 body{
     min-height: 100vh;
-    background-color: var(--panel-color);
+    background-color: var(--primary-color);
 }
 body.dark{
     --primary-color: orange;
@@ -478,13 +477,12 @@ nav.close ~ .dashboard .top{
 }
 #invoice {
     height: 55%;
- 
+    overflow-y: scroll;
 }
 .input-area {
     display: flex;
     flex-wrap: nowrap;
 }
-
 .dynamic-row {
     border-collapse: collapse;
     text-align: center;
@@ -493,10 +491,9 @@ nav.close ~ .dashboard .top{
     margin-right: 10%;
   
 }
-
 .dynamic-row tr td {   
-    padding-right: 5px; 
-    margin: auto;
+    padding: 0; 
+    margin: 0;
     height: 60px;
     width: 150px;
     border-radius: 10px;
@@ -513,7 +510,6 @@ nav.close ~ .dashboard .top{
 }
 
 button {
-    
     width: 20%;
     height: 35px;
     margin: 1.5%;
@@ -556,7 +552,9 @@ button {
 
 .correcao {
     padding-top: 100px;
+    box-sizing: border-box;
 }
+
 .caixa {
     box-sizing: border-box;
 }

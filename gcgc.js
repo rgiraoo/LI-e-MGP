@@ -333,4 +333,3 @@ const cards = document.querySelectorAll(".card");
 const onLinkClick = (link, currentIndex) => {
     console.log(link, currentIndex);
 }
-
