@@ -21,15 +21,15 @@
     --box3-color: rgb(10, 173, 10);
     --title-icon-color: rgb(0, 0, 0);
     
-    /* ====== Transition ====== */
-    --tran-05: all 0.5s ease;
-    --tran-03: all 0.3s ease;
-    --tran-03: all 0.2s ease;
+     /* ====== Transition ====== */
+     --tran-05: all 0.5s ease;
+     --tran-03: all 0.3s ease;
+     --tran-03: all 0.2s ease;
 }
 
 body{
     min-height: 100vh;
-    background-color: var(--primary-color);
+    background-color: var(--panel-color);
 }
 body.dark{
     --primary-color: orange;

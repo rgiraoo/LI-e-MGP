@@ -42,7 +42,7 @@
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="dashboard.html">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
@@ -54,7 +54,7 @@
                     <i class="uil uil-chart"></i>
                     <span class="link-name">Near Stores</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="mysuper.php">
                     <i class="uil uil-thumbs-up"></i>
                     <span class="link-name">My Supermarket</span>
                 </a></li>

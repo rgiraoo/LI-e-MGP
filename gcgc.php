@@ -44,7 +44,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <i class="uil uil-estate"></i>
             <span class="link-name">Home</span>
           </a></li>
-        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="#">
+        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="dashboard.html">
             <i class="uil uil-comments"></i>
             <span class="link-name">Dashboard</span>
           </a></li>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <i class="uil uil-thumbs-up"></i>
             <span class="link-name">My Supermarket</span>
           </a></li>
-        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="gc2.php">
+        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="gcgc.php">
             <i class="uil uil-comments"></i>
             <span class="link-name">Grocery List</span>
           </a></li>
