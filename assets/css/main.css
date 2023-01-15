@@ -150,3 +150,12 @@ i {
 	font-weight: 300;
 	letter-spacing: 1px;
 }
+
+#myButton {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -617,6 +617,7 @@ form input[type="submit"]:hover {
 	background-color: rgb(247, 190, 84);
 }
 
+
 th {
     border: 1px solid #dddddd;
     text-align: left;
@@ -628,7 +629,7 @@ td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    background-color: orange;
+    background-color: white;
 }
 table {
 	margin: 0 auto;
