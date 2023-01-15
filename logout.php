@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location: register.html");
+header("Location: register.php");
 exit();

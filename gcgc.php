@@ -6,12 +6,12 @@ session_start();
 // Check if the user is logged in
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
   // Redirect the user to the login page
-  header('Location: register.html');
+  header('Location: register.php');
   exit;
 }
 ?>
 
-<?php include("db.php"); ?>
+
 
 
 
@@ -44,7 +44,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <i class="uil uil-estate"></i>
             <span class="link-name">Home</span>
           </a></li>
-        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="#">
+        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="dashboard.html">
             <i class="uil uil-comments"></i>
             <span class="link-name">Dashboard</span>
           </a></li>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <i class="uil uil-thumbs-up"></i>
             <span class="link-name">My Supermarket</span>
           </a></li>
-        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="gc2.php">
+        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="gcgc.php">
             <i class="uil uil-comments"></i>
             <span class="link-name">Grocery List</span>
           </a></li>
@@ -101,69 +101,87 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 
 
+    <form id="product-form" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="price">Unit Price:</label>
+    <input type="text" id="price" name="price"><br>
+    <label for="units">Units:</label>
+    <input type="text" id="units" name="units"><br>
+    <input type="submit" value="Add Product">
+</form>
+<table id="product-table">
+    <tr>
+        <th>Name</th>
+        <th>Unit Price</th>
+        <th>Units</th>
+    </tr>
+</table>
+<script>
+    // Get the form and the table elements
+    const form = document.getElementById('product-form');
+    const table = document.getElementById('product-table');
+
+    // Add a submit event listener to the form
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // prevent the form from submitting
+
+        // Get the form data
+        const name = document.getElementById('name').value;
+        const price = document.getElementById('price').value;
+        const units = document.getElementById('units').value;
+
+        // Create a new FormData object to send the form data in the request
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('price', price);
+        formData.append('units', units);
+
+        // Send a POST request to the PHP script
+        fetch('create_product.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Check if the product was added successfully
+            if (data.success) {
+                // Create a new row for the product
+                const row = document.createElement('tr');
+                const nameCol = document.createElement('td');
+                nameCol.innerHTML = name;
+                const priceCol = document.createElement('td');
+                priceCol.innerHTML = price;
+                const unitsCol = document.createElement('td');
+                unitsCol.innerHTML = units;
+
+                // Append the columns to the row
+                row.appendChild(nameCol);
+                row.appendChild(priceCol);
+                row.appendChild(unitsCol);
+
+                // Append the row to the table
+                table.appendChild(row);
+
+                // Clear the form
+                form.reset();
+            } else {
+                // Show an error message
+                alert('Error: ' + data.message);
+            }
+        });
+    });
+</script>
+  
+
+
+  
 
 
 
-    <main class="container p-4">
-  <div class="row">
-    <div class="col-md-4">
-      <!-- MESSAGES -->
 
-      <?php if (isset($_SESSION['message'])) { ?>
-      <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
-        <?= $_SESSION['message']?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <?php session_unset(); } ?>
 
-      <!-- ADD TASK FORM -->
-      <div class="card card-body">
-        <form action="save_task.php" method="POST">
-          <div class="form-group">
-            <input type="text" name="title" class="form-control" placeholder="Task Title" autofocus>
-          </div>
-          <div class="form-group">
-            <textarea name="description" rows="2" class="form-control" placeholder="Task Description"></textarea>
-          </div>
-          <input type="submit" name="save_task" class="btn btn-success btn-block" value="Save Task">
-        </form>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Created At</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
 
-          <?php
-          $query = "SELECT * FROM task";
-          $result_tasks = mysqli_query($conn, $query);    
-
-          while($row = mysqli_fetch_assoc($result_tasks)) { ?>
-          <tr>
-            <td><?php echo $row['title']; ?></td>
-            <td><?php echo $row['description']; ?></td>
-            <td><?php echo $row['created_at']; ?></td>
-            <td>
-              <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
-                <i class="fas fa-marker"></i>
-              </a>
-              <a href="delete_task.php?id=<?php echo $row['id']?>" class="btn btn-danger">
-                <i class="far fa-trash-alt"></i>
-              </a>
-            </td>
-          </tr>
-          <?php } ?>
-        </tbody>
-      </table>
     </div>
   </div>
 

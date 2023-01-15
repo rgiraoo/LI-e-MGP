@@ -21,15 +21,16 @@
     --box3-color: rgb(10, 173, 10);
     --title-icon-color: rgb(0, 0, 0);
     
-    /* ====== Transition ====== */
-    --tran-05: all 0.5s ease;
-    --tran-03: all 0.3s ease;
-    --tran-03: all 0.2s ease;
+     /* ====== Transition ====== */
+     --tran-05: all 0.5s ease;
+     --tran-03: all 0.3s ease;
+     --tran-03: all 0.2s ease;
+
 }
 
 body{
     min-height: 100vh;
-    background-color: var(--primary-color);
+    background-color: var(--panel-color);
 }
 body.dark{
     --primary-color: orange;
@@ -477,12 +478,13 @@ nav.close ~ .dashboard .top{
 }
 #invoice {
     height: 55%;
-    overflow-y: scroll;
+ 
 }
 .input-area {
     display: flex;
     flex-wrap: nowrap;
 }
+
 .dynamic-row {
     border-collapse: collapse;
     text-align: center;
@@ -491,9 +493,10 @@ nav.close ~ .dashboard .top{
     margin-right: 10%;
   
 }
+
 .dynamic-row tr td {   
-    padding: 0; 
-    margin: 0;
+    padding-right: 5px; 
+    margin: auto;
     height: 60px;
     width: 150px;
     border-radius: 10px;
@@ -510,6 +513,7 @@ nav.close ~ .dashboard .top{
 }
 
 button {
+    
     width: 20%;
     height: 35px;
     margin: 1.5%;
@@ -552,9 +556,79 @@ button {
 
 .correcao {
     padding-top: 100px;
+}
+.caixa {
     box-sizing: border-box;
 }
 
-.caixa {
-    box-sizing: border-box;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form {
+	margin: 0 auto;
+	width: 400px;
+	text-align: center;
+	padding: 20px;
+	border: 1px solid #dddddd;
+	margin-top: 90px;
+}
+
+form label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+form input[type="text"] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+form input[type="submit"] {
+	width: 100%;
+	background-color: orange;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+	background-color: rgb(247, 190, 84);
+}
+
+table {
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 80%;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #dddddd;
 }

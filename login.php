@@ -3,7 +3,7 @@ session_start();
 
 // Make sure the user is not already logged in
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-    header('Location: dashboard.php');
+    header('Location: index2.php');
     exit;
 }
 

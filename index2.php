@@ -6,7 +6,7 @@ session_start();
 // Check if the user is logged in
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     // Redirect the user to the login page
-    header('Location: register.html');
+    header('Location: register.php');
     exit;
 }
 ?>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="dashboard.html">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
@@ -96,30 +96,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
         <div class="dash-content">
             <div class="overview">
-                <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Dashboard</span>
-                </div>
-
-                <div class="boxes">
-                    <div class="box box1">
-                        <i class="uil uil-money-bill"></i>
-                        <span class="text">Total Expenses</span>
-                        <span class="number">1,335€</span>
-                    </div>
-                    <div class="box box2">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Something Else</span>
-                        <span class="number">80€</span>
-                    </div>
-                    <div class="box box3">
-                        <i class="uil uil-wallet"></i>
-                        <span class="text">Savings</span>
-                        <span class="number">115€</span>
-                    </div>
-                </div>
-            </div>
-
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
