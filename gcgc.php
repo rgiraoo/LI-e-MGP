@@ -35,7 +35,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         <!--<img src="images/logo.png" alt="">-->
       </div>
 
-      <span class="logo_name">Grocery List</span>
+      <span class="logo_name">BesTCart</span>
     </div>
 
     <div class="menu-items">
