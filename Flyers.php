@@ -10,26 +10,17 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     exit;
 }
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery List</title>
-    <link rel="stylesheet" href="nearstores.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="Flyers.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-
+    <link href='https://fonts.googleapis.com/css?family=Dosis:600' rel='stylesheet' type='text/css'>
 </head>
-
-
 <body>
-
-
-
-<div class="mapa">
-    <iframe src="https://my.atlistmaps.com/map/f59f2988-ffed-4b48-8a98-e5a5f048d1e6?share=true" allow="geolocation" width="100%" height="700px" frameborder="0" scrolling="no" allowfullscreen></iframe>
-</div>
-
 
     <nav>
         <div class="logo-name">
@@ -40,7 +31,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <span class="logo_name">BesTCart</span>
         </div>
 
-        <div class="menu-items">
+        <div class="menu-items" id="myMenu">
             <ul class="nav-links">
                 <li><a href="index2.php">
                     <i class="uil uil-estate"></i>
@@ -54,7 +45,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Flyers</span>
                 </a></li>
-                <li><a href="nearstores.php">
+                <li><a href="#">
                     <i class="uil uil-chart"></i>
                     <span class="link-name">Near Stores</span>
                 </a></li>
@@ -71,9 +62,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="logout.php">
+                <li><a href="register.html">
                     <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
+                    <span class="link-name">Login/Register</span>
                 </a></li>
 
                 <li class="mode">
@@ -90,10 +81,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         </div>
     </nav>
 
-    
-
-
-
 
     <section class="dashboard">
         <div class="top">
@@ -101,19 +88,29 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search here...">
             </div>
             
             <!--<img src="images/profile.jpg" alt="">-->
         </div>
-    </section>
-
-
-
-
-
-
-    <script src="nearstores.js"></script>
+<br><br>
+<aside>
+  <div class="caixa_br">
+    <h1>Select your Supermarket</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas dolor ac aliquet mollis. In ac ipsum enim. Nulla pharetra sollicitudin magna.</p>
+    <div class="grid-container">
+        
+       
+        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="jumbo.pdf"> <img src="conti.png" alt="cant load" height="100" width="100"></div>  
+        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>  
+        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
+     
+  </div>
+</aside>
+<script src="Flyers.js"></script>
 </body>
-
 </html>

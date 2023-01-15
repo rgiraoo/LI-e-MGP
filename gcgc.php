@@ -48,7 +48,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <i class="uil uil-comments"></i>
             <span class="link-name">Dashboard</span>
           </a></li>
-        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="#">
+        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="flyers.php">
             <i class="uil uil-files-landscapes"></i>
             <span class="link-name">Flyers</span>
           </a></li>
