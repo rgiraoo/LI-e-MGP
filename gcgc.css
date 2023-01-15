@@ -617,6 +617,20 @@ form input[type="submit"]:hover {
 	background-color: rgb(247, 190, 84);
 }
 
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: white;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: orange;
+}
 table {
 	margin: 0 auto;
 	margin-top: 50px;
@@ -624,12 +638,6 @@ table {
 	border-collapse: collapse;
 }
 
-th, td {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 8px;
-}
 
-th {
-	background-color: #dddddd;
-}
+
+
