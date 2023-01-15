@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Jan-2023 às 23:12
+-- Tempo de geração: 15-Jan-2023 às 03:57
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -28,28 +28,29 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `products` (
+  `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(30) NOT NULL,
-  `unit_price` decimal(10,2) NOT NULL,
-  `unit` varchar(10) NOT NULL
+  `unit_price` float NOT NULL,
+  `units` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `products`
 --
 
-INSERT INTO `products` (`name`, `unit_price`, `unit`) VALUES
-('asd', '12.00', '12'),
-('asd', '12.00', '12'),
-('asdasd', '12.00', '12'),
-('adasd', '12.00', '12'),
-('sad', '12.00', '12'),
-('mendsasd', '434.00', '34'),
-('asdasd', '12.00', '12'),
-('asdasd', '12.00', '12'),
-('asd', '12.00', '12'),
-('asd', '12.00', '12'),
-('asd', '12.00', '12'),
-('asd', '12.00', '12');
+INSERT INTO `products` (`id`, `name`, `unit_price`, `units`) VALUES
+(30, 'Dildo', 1, 1),
+(31, 'sadasd', 1231, 12),
+(32, '', 0, 0),
+(33, 'asdasd', 12, 12),
+(34, 'asdasd', 67, 67),
+(35, 'sadad', 12, 12),
+(36, 'asdas', 12, 12),
+(37, 'sAS', 12, 12),
+(38, 'asdas', 12, 12),
+(39, 'asdasd', 12, 12),
+(40, 'adadas', 12, 12),
+(41, 'fsdfsdfsdf', 665565, 565665);
 
 -- --------------------------------------------------------
 
@@ -80,6 +81,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_a
 --
 
 --
+-- Índices para tabela `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `users`
 --
 ALTER TABLE `users`
@@ -89,6 +96,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de tabela `users`

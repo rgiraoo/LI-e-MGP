@@ -617,19 +617,22 @@ form input[type="submit"]:hover {
 	background-color: rgb(247, 190, 84);
 }
 
-table {
-	margin: 0 auto;
-	margin-top: 50px;
-	width: 80%;
-	border-collapse: collapse;
-}
-
-th, td {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 8px;
-}
-
 th {
-	background-color: #dddddd;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: white;
+}
+
+td {
+    background-color: white;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+table {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 80%;
+    border-collapse: collapse;
 }
