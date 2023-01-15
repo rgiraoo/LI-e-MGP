@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    // Redirect the user to the login page
+    header('Location: register.php');
+    exit;
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="nearstores.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
 </head>
+
+
 <body>
-    
+
+
+
+<div class="mapa">
+    <iframe src="https://my.atlistmaps.com/map/f59f2988-ffed-4b48-8a98-e5a5f048d1e6?share=true" allow="geolocation" width="100%" height="700px" frameborder="0" scrolling="no" allowfullscreen></iframe>
+</div>
+
+
     <nav>
         <div class="logo-name">
             <div class="logo-image">
@@ -50,9 +71,9 @@
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="register.html">
+                <li><a href="logout.php">
                     <i class="uil uil-signout"></i>
-                    <span class="link-name">Login/Register</span>
+                    <span class="link-name">Logout</span>
                 </a></li>
 
                 <li class="mode">
@@ -69,6 +90,10 @@
         </div>
     </nav>
 
+    
+
+
+
 
     <section class="dashboard">
         <div class="top">
@@ -81,35 +106,14 @@
             
             <!--<img src="images/profile.jpg" alt="">-->
         </div>
-
-        <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Dashboard</span>
-                </div>
-
-                <div class="boxes">
-                    <div class="box box1">
-                        <i class="uil uil-money-bill"></i>
-                        <span class="text">Total Expenses</span>
-                        <span class="number">1,335€</span>
-                    </div>
-                    <div class="box box2">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Something Else</span>
-                        <span class="number">80€</span>
-                    </div>
-                    <div class="box box3">
-                        <i class="uil uil-wallet"></i>
-                        <span class="text">Savings</span>
-                        <span class="number">115€</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <script src="dashboard.js"></script>
+
+
+
+
+
+    <script src="nearstores.js"></script>
 </body>
+
 </html>

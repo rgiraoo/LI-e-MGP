@@ -33,7 +33,7 @@
                 <!--<img src="images/logo.png" alt="">-->
             </div>
 
-            <span class="logo_name">Grocery List</span>
+            <span class="logo_name">BesTCart</span>
         </div>
 
         <div class="menu-items">
@@ -50,7 +50,7 @@
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Flyers</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="nearstores.php">
                     <i class="uil uil-chart"></i>
                     <span class="link-name">Near Stores</span>
                 </a></li>
