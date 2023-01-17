@@ -42,11 +42,11 @@
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
                 </a></li>
-                <li><a href="dashboard.html">
+                <li><a href="dashboard.php">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="flyers.php">
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Flyers</span>
                 </a></li>

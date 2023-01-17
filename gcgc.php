@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+
+
 <?php
 session_start();
 
@@ -44,7 +49,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <i class="uil uil-estate"></i>
             <span class="link-name">Home</span>
           </a></li>
-        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="dashboard.html">
+        <li style="border-bottom: 0px; padding-bottom: 0px; padding-top: 0px;"><a href="dashboard.php">
             <i class="uil uil-comments"></i>
             <span class="link-name">Dashboard</span>
           </a></li>
@@ -101,6 +106,13 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 
 
+    
+
+
+
+    
+
+
     <form id="product-form" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br>
@@ -109,19 +121,39 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <label for="units">Units:</label>
     <input type="text" id="units" name="units"><br>
     <input type="submit" value="Add Product">
+    <input type="button" value="Print Table" onclick="printTable()">
+
+   
+
 </form>
+
+
 <table id="product-table">
     <tr>
         <th>Name</th>
         <th>Unit Price</th>
         <th>Units</th>
     </tr>
+
+    <tr id="total-row">
+        <td id="teste1">Total</td>
+        <td id="total-col"></td>
+    </tr>
 </table>
+
+
+
+
+
+
+
+
+
 <script>
     // Get the form and the table elements
     const form = document.getElementById('product-form');
     const table = document.getElementById('product-table');
-
+    let total = 0;
     // Add a submit event listener to the form
     form.addEventListener('submit', e => {
         e.preventDefault(); // prevent the form from submitting
@@ -160,11 +192,23 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 row.appendChild(priceCol);
                 row.appendChild(unitsCol);
 
+                // Append the row to
                 // Append the row to the table
                 table.appendChild(row);
 
                 // Clear the form
                 form.reset();
+
+                // update the total
+                total += price * units;
+                const totalRow = document.getElementById('total-row');
+                const totalCol = document.getElementById('total-col');
+                totalCol.innerHTML = total;
+                totalCol.style.backgroundColor = "gray";
+                totalCol.style.fontWeight = "bold";
+                totalRow.style.backgroundColor = "gray";
+                totalRow.style.fontWeight = "bold";
+                teste1.style.backgroundColor= "grey";
             } else {
                 // Show an error message
                 alert('Error: ' + data.message);
@@ -172,18 +216,27 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         });
     });
 </script>
+
+
+
+<script>
+  function printTable() {
+    window.print();
+}
+</script>
+
+
+
+
+
   
 
 
-  
 
 
 
 
 
-
-    </div>
-  </div>
 
 
 
@@ -198,24 +251,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-        </div>
-      </div>
 
     </main>
 

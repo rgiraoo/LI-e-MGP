@@ -38,7 +38,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
                 </a></li>
-                <li><a href="dashboard.html">
+                <li><a href="dashboard.php">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>

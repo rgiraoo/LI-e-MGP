@@ -1,6 +1,13 @@
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
+
+
+
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +15,10 @@
     font-family: 'Poppins', sans-serif;
 
 }
+
+
+
+
 
 :root {
     /* ===== Colors ===== */
@@ -671,6 +682,11 @@ form {
 
 }
 
+
+
+
+
+
 form label {
     display: block;
     margin-bottom: 10px;
@@ -701,12 +717,29 @@ form input[type="submit"]:hover {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
     background-color: white;
 }
+
+
+
+
 
 td {
     border: 1px solid #dddddd;
@@ -721,3 +754,14 @@ table {
     width: 80%;
     border-collapse: collapse;
 }
+
+
+
+
+
+
+
+
+
+
+
