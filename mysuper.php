@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery List</title>
+    <title>My Supermarket</title>
     <link rel="stylesheet" href="mysuper.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -94,7 +94,7 @@
 
           <div class="search-box">
               <i class="uil uil-search"></i>
-              <input type="text" placeholder="Search here...">
+              <input type="text" id="mySearch" placeholder="Search here...">
           </div>
           
           <!--<img src="images/profile.jpg" alt="">-->
@@ -103,203 +103,58 @@
 
     
 
+    <!-- Create Form -->
+    <h2>Create Product</h2>
+    <form action="create.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="categories">Categories:</label>
+        <input type="text" id="categories" name="categories"><br>
+        <label for="added_by">Added by:</label>
+        <input type="text" id="added_by" name="added_by"><br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity"><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price"><br>
+        <input type="submit" name="create" value="Create">
+    </form>
 
-    <div class="ui container">
-        <!-- Segmento de Filtro -->
-        <div class="ui segment">
-          <p class="ui orange ribbon label">
-            <i class="filter icon"></i> Filters
-          </p>
-  
-          <div id="formFiltro" class="ui form">
-            <div class="three fields">
-              <div class="field">
-                <label><i class="barcode icon"></i>Bar Code</label>
-                <div id="filtroCodigoBarra" class="ui search">
-                  <div class="ui input">
-                    <input class="prompt" type="text" placeholder="Ex.: 7891031406014">
-                  </div>
-                  <div class="results"></div>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label><i class="box icon"></i>Product</label>
-                <div id="filtroProduto" class="ui search">
-                  <div class="ui input">
-                    <input class="prompt" type="text" placeholder="Ex.: Cheese">
-                  </div>
-                  <div class="results"></div>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label><i class="tag icon"></i>Category</label>
-                <div id="filtroCategorias" class="ui search">
-                  <div class="ui input ">
-                    <input class="prompt" type="text" placeholder="Ex.: Fruit">
-                  </div>
-                  <div class="results"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- FIM Segmento de Filtro -->
-  
-        <h1>Products</h1>
-  
-        <!-- Tabela de Produtos cadastrados -->
-        <table class="ui table">
-          <thead>
-            <tr>
-              <th>Bar Code</th>
-              <th>Name</th>
-              <th>Added by</th>
-              <th>Price</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>7891031409404</td>
-              <td>Ketchup Hemmer 320g</td>
-              <td>Dad</td>
-              <td>3,20€</td>
-              <td>
-                <button class="ui button basic green btnCadastro">
-                  <i class="pencil alternative icon"></i> Edit
-                </button>
-                <button class="ui button basic red btnExcluir">
-                  <i class="close icon"></i> Delete
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>7891031406014</td>
-              <td>Jack Daniels 75cl</td>
-              <td>Sister</td>
-              <td>7,80€</td>
-              <td>
-                <button class="ui button basic green btnCadastro">
-                  <i class="pencil alternative icon"></i> Edit
-                </button>
-                <button class="ui button basic red btnExcluir">
-                  <i class="close icon"></i> Delete
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- FIM Tabela de Produtos cadastrados -->
-  
-        <button class="ui button right floated orange btnCadastro">New Product</button>
-  
-        <!-- Modal de CRUD de Produtos -->
-        <div id="modalCadastro" class="ui modal">
-          <i class="close icon"></i>
-          <div class="header">
-            Product Registration
 
-          </div>
-          <div class="content">
-            <div class="ui form">
-              <div class="equal width fields">
-                <div class="field">
-                  <label>Bar Code</label>
-                  <input type="text" placeholder="Ex.: 7891031406014">
-                </div>
-                <div class="field">
-                  <label>Name</label>
-                  <input type="text" placeholder="Ex.: Cheese">
-                </div>
-              </div>
-  
-              <div class="equal width fields">
-                <div class="field">
-                  <label>Label</label>
-                  <div id="dropdownMarcas" class="ui search selection dropdown">
-                    <input name="inputMarcas" type="hidden">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Ex.: Lipton</div>
-                    <div class="menu">
-                      <div class="item" data-value="HL">Hellmanns</div>
-                      <div class="item" data-value="HM">Hemmer</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="field">
-                  <label>Categry</label>
-                  <div id="dropdownCategorias" class="ui multiple search selection dropdown">
-                    <input name="inputCategorias" type="hidden">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Ex.: Fruit</div>
-                    <div class="menu">
-                      <div class="item" data-value="CO">Extras</div>
-                      <div class="item" data-value="HA">Burguer</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <div class="equal width fields">
-                <div class="field">
-                  <label>Volume</label>
-                  <input type="text" placeholder="Ex.: 200">
-                </div>
-                <div class="field">
-                  <label>Medida</label>
-                  <div id="dropdownMedida" class="ui search selection dropdown">
-                    <input name="inputMedidas" type="hidden">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Ex.: Gramas</div>
-                    <div class="menu">
-                      <div class="item" data-value="GR">Gramas</div>
-                      <div class="item" data-value="KG">Quilos</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <div class="field">
-                <label>Observações</label>
-                <textarea style="margin-top: 0px; margin-bottom: 0px; height: 112px;"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="actions">
-            <div class="ui teal right labeled icon button">
-              Salvar
-              <i class="checkmark icon"></i>
-            </div>
-          </div>
-        </div>
-        <!-- FIM Modal de CRUD de Produtos -->
-  
-        <!-- Modal de Confirmação de Exclusão -->
-        <div id="modalConfirmacaoExclusao" class="ui basic modal">
-          <div class="ui icon header">
-            <i class="archive icon"></i>
-            Exclusão de Produto
-          </div>
-          <div class="content">
-            <p>Tem certeza que deseja excluir o produto "Ketchup Hemmer Tradicional 320g"? Esta ação não pode ser revertida.</p>
-          </div>
-          <div class="actions">
-            <div class="ui red basic cancel inverted button">
-              <i class="remove icon"></i>
-              Não
-            </div>
-            <div class="ui green ok inverted button">
-              <i class="checkmark icon"></i>
-              Sim
-            </div>
-          </div>
-        </div>
-        <!-- FIM Modal de Confirmação de Exclusão -->
-      </div>
+
 
    
+    <tbody>
+        <?php
+            include 'read.php';
+            while ($row = mysqli_fetch_array($result)) {
+              echo "<tr class='new-row'>";
+              echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['name'] . "</td>";
+                echo "<td>" . $row['categories'] . "</td>";
+                echo "<td>" . $row['added_by'] . "</td>";
+                echo "<td>" . $row['added'] . "</td>";
+                echo "<td>" . $row['quantity'] . "</td>";
+                echo "<td>" . $row['price'] . "</td>";
+                echo "<td>
+                        <form action='update.php' method='post'>
+                            <input type='hidden' name='id' value='" . $row['id'] . "'>
+                            <input type='submit' name='edit' value='Edit'>
+                        </form>
+                        <form action='delete.php' method='get'>
+                            <input type='hidden' name='id' value='" . $row['id'] . "'>
+                            <input type='submit' name='delete' value='Delete'>
+                        </form>
+                      </td>";
+                echo "</tr>";
+            }
+        ?>
+    </tbody>
+</table>
+
+
+
+   
+
 
 
 

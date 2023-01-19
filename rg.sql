@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Jan-2023 às 03:57
+-- Tempo de geração: 19-Jan-2023 às 18:58
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -39,18 +39,34 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `unit_price`, `units`) VALUES
-(30, 'Dildo', 1, 1),
-(31, 'sadasd', 1231, 12),
-(32, '', 0, 0),
-(33, 'asdasd', 12, 12),
-(34, 'asdasd', 67, 67),
-(35, 'sadad', 12, 12),
-(36, 'asdas', 12, 12),
-(37, 'sAS', 12, 12),
-(38, 'asdas', 12, 12),
-(39, 'asdasd', 12, 12),
-(40, 'adadas', 12, 12),
-(41, 'fsdfsdfsdf', 665565, 565665);
+(233, 'Tostas', 4, 67),
+(235, 'Cebolas', 1, 45),
+(236, 'Pipocas', 89, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `products1`
+--
+
+CREATE TABLE `products1` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `categories` varchar(255) NOT NULL,
+  `added_by` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `products1`
+--
+
+INSERT INTO `products1` (`id`, `name`, `categories`, `added_by`, `quantity`, `price`) VALUES
+(6, 'Milho', 'Comida', 'Pai', 5, '7.00'),
+(8, 'Cebolas', 'Random', 'Mãe', 4, '4.00'),
+(9, 'Torradas', 'Comida', 'Sogra', 4, '1.00'),
+(10, 'Arroz', '', 'Tio', 10, '3.00');
 
 -- --------------------------------------------------------
 
@@ -74,7 +90,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `remember_token`, `terms_accepted`) VALUES
-(2, 'KidBengalada', 'kidbengala69@gmail.com', 'sexo69sexo', '2023-01-14 15:57:02', '2023-01-14 15:57:02', NULL, 0);
+(4, 'apresentacao', 'teste@gmail.com', 'teste', '2023-01-17 16:33:52', '2023-01-17 16:33:52', NULL, 0);
 
 --
 -- Índices para tabelas despejadas
@@ -84,6 +100,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_a
 -- Índices para tabela `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `products1`
+--
+ALTER TABLE `products1`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -101,13 +123,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
+
+--
+-- AUTO_INCREMENT de tabela `products1`
+--
+ALTER TABLE `products1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

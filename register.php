@@ -19,7 +19,7 @@
 
                 <form action="login.php" method="post">
                     <div class="input-field">
-                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <input type="email" name="email" placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
@@ -59,7 +59,7 @@
                         <i class="uil uil-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <input type="email" name="email" placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">

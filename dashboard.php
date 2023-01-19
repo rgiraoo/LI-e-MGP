@@ -11,20 +11,79 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT name, unit_price FROM products";
+
+
+$sql = "SELECT name, units FROM products";
 $result = $conn->query($sql);
 
-$data = array();
+$data1 = array();
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $data[] = array(
+        $data1[] = array(
             'name' => $row['name'],
+            'units' => $row['units']
+        );
+    }
+}
+
+$sql = "SELECT added_by, price FROM products1";
+$result = $conn->query($sql);
+
+$data2 = array();
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $data2[] = array(
+            'added_by' => $row['added_by'],
+            'price' => $row['price']
+        );
+    }
+}
+
+
+$sql = "SELECT categories, quantity FROM products1";
+$result = $conn->query($sql);
+
+$data3 = array();
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $data2[] = array(
+            'categories' => $row['categories'],
+            'quantity' => $row['quantity']
+        );
+    }
+}
+
+
+
+$sql = "SELECT units, unit_price FROM products";
+$result = $conn->query($sql);
+
+$data3 = array();
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $data2[] = array(
+            'units' => $row['units'],
             'unit_price' => $row['unit_price']
         );
     }
 }
+
+
+
+$data = array_merge($data1, $data2, $data3);
+
+
+
+
+
 $conn->close();
 ?>
 
@@ -45,8 +104,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="testes.css">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -138,16 +197,16 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     </div>
   </div>
 </div>
-
+    </section>
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: [<?php echo "'" . implode("','", array_column($data, 'name')) . "'"; ?>],
+            labels: [<?php echo "'" . implode("','", array_column($data, 'added_by')) . "'"; ?>],
             datasets: [{
-                label: 'Units',
-                data: [<?php echo implode(",", array_column($data, 'unit_price')); ?>],
+                label: '€ Spent',
+                data: [<?php echo implode(",", array_column($data, 'price')); ?>],
                 backgroundColor: [
                     '#FFA500',
                     '#FFB973',
@@ -181,10 +240,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     var chart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: [<?php echo "'" . implode("','", array_column($data, 'name')) . "'"; ?>],
+            labels: [<?php echo "'" . implode("','", array_column($data, 'categories')) . "'"; ?>],
             datasets: [{
-                label: 'Units',
-                data: [<?php echo implode(",", array_column($data, 'unit_price')); ?>],
+                label: 'Quantity in Categories',
+                data: [<?php echo implode(",", array_column($data, 'quantity')); ?>],
                 backgroundColor: [
                     '#FFA500',
                     '#FFB973',
@@ -218,8 +277,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         data: {
             labels: [<?php echo "'" . implode("','", array_column($data, 'name')) . "'"; ?>],
             datasets: [{
-                label: 'Units',
-                data: [<?php echo implode(",", array_column($data, 'unit_price')); ?>],
+                label: 'Units Bought',
+                data: [<?php echo implode(",", array_column($data, 'units')); ?>],
                 backgroundColor: [
                     '#FFA500',
                     '#FFB973',
@@ -251,9 +310,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     var chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: [<?php echo "'" . implode("','", array_column($data, 'name')) . "'"; ?>],
+            labels: [<?php echo "'" . implode("','", array_column($data, 'units')) . "'"; ?>],
             datasets: [{
-                label: 'Units',
+                label: 'Units Bought by money Spent',
                 data: [<?php echo implode(",", array_column($data, 'unit_price')); ?>],
                 backgroundColor: [
                     '#FFA500',
@@ -296,6 +355,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 
        
-    <script src="testes.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

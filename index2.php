@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-session_start();
-
-// Check if the user is logged in
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    // Redirect the user to the login page
-    header('Location: register.php');
-    exit;
-}
-?>
+  <?php
+  session_start();
+  
+  // Check if the user is logged in
+  if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+      // Redirect the user to the login page
+      header('Location: register.php');
+      exit;
+  }
+  ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
-    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="mysuper.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.css">
+
+
 </head>
+
 
 
 <body>
@@ -82,77 +86,51 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         </div>
     </nav>
 
+
+
     <section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
+      <div class="top">
+          <i class="uil uil-bars sidebar-toggle"></i>
 
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
-            
-            <!--<img src="images/profile.jpg" alt="">-->
-        </div>
+          <div class="search-box">
+              <i class="uil uil-search"></i>
+              <input type="text" id="mySearch" placeholder="Search here...">
+          </div>
+          
+          <!--<img src="images/profile.jpg" alt="">-->
+      </div>
 
-        <div class="dash-content">
-            <div class="overview">
-            <div class="activity">
-                <div class="title">
-                    <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Bought</span>
-                </div>
 
-                <div class="activity-data">
-                    <div class="data names">
-                        <span class="data-title">Product</span>
-                        <span class="data-list">Apples</span>
-                        <span class="data-list">Chocolate</span>
-                        <span class="data-list">Rice</span>
-                        <span class="data-list">Pasta</span>
-                        <span class="data-list">Beer</span>
-                        <span class="data-list">Cheese</span>
-                        <span class="data-list">Coca-Cola</span>
-                    </div>
-                    
-                    <div class="data joined">
-                        <span class="data-title">Quantity</span>
-                        <span class="data-list">12</span>
-                        <span class="data-list">3</span>
-                        <span class="data-list">8</span>
-                        <span class="data-list">14</span>
-                        <span class="data-list">47</span>
-                        <span class="data-list">16</span>
-                        <span class="data-list">3</span>
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Type</span>
-                        <span class="data-list">Fruit</span>
-                        <span class="data-list">Food</span>
-                        <span class="data-list">Food</span>
-                        <span class="data-list">Food</span>
-                        <span class="data-list">Drink</span>
-                        <span class="data-list">Food</span>
-                        <span class="data-list">Drink</span>
-                    </div>
+    
 
-                    <div class="data type">
-                        <span class="data-title">Member</span>
-                        <span class="data-list">Dad</span>
-                        <span class="data-list">Sister</span>
-                        <span class="data-list">Dad</span>
-                        <span class="data-list">Mom</span>
-                        <span class="data-list">Alex</span>
-                        <span class="data-list">Tomas</span>
-                        <span class="data-list">Uncle</span>
-                    </div>
+    
+        <?php
+            include 'read2.php';
+            while ($row = mysqli_fetch_array($result)) {
+              echo "<tr class='new-row'>";
+                echo "<td>" . $row['name'] . "</td>";
+                echo "<td>" . $row['added_by'] . "</td>";
+                echo "<td>" . $row['quantity'] . "</td>";
+                echo "<td>" . $row['price'] . "</td>";
+                echo "<td>
+                        <form action='update.php' method='post'>
+                            <input type='hidden' name='id' value='" . $row['id'] . "'>
+                            <input type='submit' name='edit' value='Edit'>
+                        </form>
+                        <form action='delete.php' method='get'>
+                            <input type='hidden' name='id' value='" . $row['id'] . "'>
+                            <input type='submit' name='delete' value='Delete'>
+                        </form>
+                      </td>";
+                echo "</tr>";
+            }
+        ?>
+    </tbody>
+</table>
 
 
 
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
 
 
@@ -161,7 +139,18 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 
 
-    <script src="index2.js"></script>
+
+
+
+
+    <script src="mysuper.js"></script>
+
+
+    
 </body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.js"></script>
 
 </html>

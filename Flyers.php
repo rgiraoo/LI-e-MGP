@@ -15,7 +15,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flyers</title>
     <link rel="stylesheet" href="Flyers.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href='https://fonts.googleapis.com/css?family=Dosis:600' rel='stylesheet' type='text/css'>
@@ -31,13 +31,13 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             <span class="logo_name">BesTCart</span>
         </div>
 
-        <div class="menu-items" id="myMenu">
+        <div class="menu-items">
             <ul class="nav-links">
                 <li><a href="index2.php">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
                 </a></li>
-                <li><a href="dashboard.html">
+                <li><a href="dashboard.php">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Flyers</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="nearstores.php">
                     <i class="uil uil-chart"></i>
                     <span class="link-name">Near Stores</span>
                 </a></li>
@@ -62,9 +62,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="register.html">
+                <li><a href="logout.php">
                     <i class="uil uil-signout"></i>
-                    <span class="link-name">Login/Register</span>
+                    <span class="link-name">Logout</span>
                 </a></li>
 
                 <li class="mode">
@@ -88,7 +88,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search here...">
+                <input type="text" id="mySearch" placeholder="Search here...">
             </div>
             
             <!--<img src="images/profile.jpg" alt="">-->
@@ -97,17 +97,14 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 <aside>
   <div class="caixa_br">
     <h1>Select your Supermarket</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas dolor ac aliquet mollis. In ac ipsum enim. Nulla pharetra sollicitudin magna.</p>
     <div class="grid-container">
-        
-       
-        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
-        <div class="grid-item"><a href="jumbo.pdf"> <img src="conti.png" alt="cant load" height="100" width="100"></div>  
-        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
-        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
-        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>  
-        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
-        <div class="grid-item"><a href="jumbo.pdf"><img src="conti.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="flyers/jumbo.pdf"><img src="flyers/jumbo.png" alt="cant load" height="130" width="130"></div>
+        <div class="grid-item"><a href="flyers/continente.pdf"><img src="flyers/conti.png" alt="cant load" height="100" width="100"></div>  
+        <div class="grid-item"><a href="flyers/pingodoce.pdf"><img src="flyers/pingodoce.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="flyers/lidl.pdf"><img src="flyers/lidl.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="flyers/intermarche.pdf"><img src="flyers/intermarche.png" alt="cant load" height="100" width="100"></div>  
+        <div class="grid-item"><a href="flyers/minipreco.pdf"><img src="flyers/minipreco.png" alt="cant load" height="100" width="100"></div>
+        <div class="grid-item"><a href="flyers/aldi.pdf"><img src="flyers/aldi.png" alt="cant load" height="100" width="120"></div>
      
   </div>
 </aside>

@@ -121,7 +121,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <label for="units">Units:</label>
     <input type="text" id="units" name="units"><br>
     <input type="submit" value="Add Product">
-    <input type="button" value="Print Table" onclick="printTable()">
+    <input type="button" class="botaoprint" value="Print Table" onclick="printTable()">
 
    
 
